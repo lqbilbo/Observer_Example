@@ -4,11 +4,11 @@ import org.junit.Test;
 
 public class TestCflow {
 	
-	public void foo() {
+	public static void foo() {
 		System.out.println("foo......");
 	}
 	
-	public void bar() {
+	public static void bar() {
 		foo();
 		System.out.println("bar......");
 	}

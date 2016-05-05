@@ -9,9 +9,15 @@ package test;
  */
 public aspect HelloAspect {
 	
-	pointcut HelloWorldPointCut() : execution(* main(..)) && !within(HelloAspectDemo);
+	pointcut HelloWorldPointCut(int x) : execution(* main(int)) && !within(HelloAspectDemo) && args(x);
 	
-	before() : HelloWorldPointCut(){
+//	before() : HelloWorldPointCut(){
+//		System.out.println("Entering : " + thisJoinPoint.getSourceLocation());
+//	}
+	
+	int around(int x) : HelloWorldPointCut(x) {
 		System.out.println("Entering : " + thisJoinPoint.getSourceLocation());
+		int newValue = proceed(x*3);
+		return newValue;
 	}
 }

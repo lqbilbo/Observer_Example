@@ -1,8 +1,9 @@
 package test;
 
 public class HelloWorld {
-	public static void main(int i) {
+	public static int main(int i) {
 		System.out.println("int the main method i = " + i);
+		return i;
 	}
 	
 	public static void main(String[] args) {
